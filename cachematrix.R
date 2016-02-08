@@ -15,12 +15,13 @@ makeCacheMatrix <- function(x = matrix())
         cm[1:nrow(x), 1:ncol(x)] <- solve(x)
         cm[(nrow(x) + 1):nrow(cm), 1:ncol(x)] <- x
         c_m <<- cm
+        x
 }
 
 
 ## This function will first compare input matrix to cached data, if
 ## the matrix isn't changed, it will skip the caculation instead of
-## directly getting the cached inverse matrix
+## getting the cached inverse matrix
 
 cacheSolve <- function(x, ...)
 {
